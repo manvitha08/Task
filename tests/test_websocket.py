@@ -8,4 +8,6 @@ async def test_websocket():
     async with websockets.connect(uri) as websocket:
         await websocket.send("subscribe")
         response = await websocket.recv()
-        assert response == "Message received: subscribe"  # Update this line to match the actual response
+        assert response == "Message received: subscribe"
+
+
