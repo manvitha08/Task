@@ -1,7 +1,8 @@
 import pytest
 from httpx import AsyncClient
 from main import app  # Import FastAPI app
-from database import get_db, Base, engine
+from db import get_db, Base, engine
+import pytest_asyncio
 from sqlalchemy.orm import sessionmaker
 import sys
 import os
