@@ -1,16 +1,9 @@
-import websockets
-import pytest
+from starlette.testclient import TestClient
+from trade_order_service.main import app
 
-@pytest.mark.asyncio
-async def test_websocket():
-    """Test WebSocket connection and real-time updates."""
-    uri = "ws://localhost:8000/ws"  # Ensure this matches your WebSocket endpoint in main.py
-    async with websockets.connect(uri) as websocket:
-        # Send a message to the WebSocket server
-        await websocket.send("subscribe")
-        
-        # Receive the response from the WebSocket server
-        response = await websocket.recv()
-        
-        # Assert that the response is what we expect
-        assert response == "Message received: subscribe"
+def test_websocket():
+    client = TestClient(app)
+    with client.websocket_connect("/ws") as websocket:
+        websocket.send_text("subscribe")
+        data = websocket.receive_text()
+        assert data == "Message received: subscribe"
