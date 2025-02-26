@@ -57,8 +57,14 @@ jobs:
           username: ubuntu
           key: ${{ secrets.EC2_SSH_KEY }}
           script: |
+            # Ensure Docker is installed on EC2
+            docker --version
+            docker-compose --version
+            # Change to the project directory
             cd ~/trade-order-service
-            docker compose down
+            # Stop any running containers
+            docker-compose down
+            # Pull the latest Docker image
             docker pull your-dockerhub-username/trade-order-service:latest
-            docker compose up -d
-
+            # Restart containers
+            docker-compose up -d
