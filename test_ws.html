@@ -1,0 +1,5 @@
+<script>
+    let ws = new WebSocket("ws://localhost:8000/ws");
+    ws.onmessage = (event) => console.log("Received:", event.data);
+    ws.onopen = () => ws.send("New order update test");
+</script>
