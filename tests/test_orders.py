@@ -10,7 +10,8 @@ import os
 # Add the root directory to Python's module search path
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
-from main import app  
+from trade_order_service.main import app  # If your project is structured this way
+
 
 # Set up test database (in-memory SQLite)
 TestSessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
