@@ -5,4 +5,6 @@ asyncpg
 databases
 psycopg2
 pytest
-
+httpx
+pytest-asyncio
+sqlite3
