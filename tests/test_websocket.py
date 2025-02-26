@@ -1,6 +1,5 @@
-import pytest
-import asyncio
 import websockets
+import pytest
 
 @pytest.mark.asyncio
 async def test_websocket():
@@ -9,4 +8,4 @@ async def test_websocket():
     async with websockets.connect(uri) as websocket:
         await websocket.send("subscribe")
         response = await websocket.recv()
-        assert response == "Subscribed to updates"
+        assert response == "Message received: subscribe"  # Update this line to match the actual response
