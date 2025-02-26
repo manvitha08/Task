@@ -1,7 +1,7 @@
 import pytest
 from httpx import AsyncClient
 from trade_order_service.main import app  # Import FastAPI app
-from db import get_db, Base, engine
+from trade_order_service.db import get_db, Base, engine
 import pytest_asyncio
 from sqlalchemy.orm import sessionmaker
 
