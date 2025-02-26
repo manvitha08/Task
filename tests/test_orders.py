@@ -1,3 +1,4 @@
+from trade_order_service.main import app  
 import pytest
 from httpx import AsyncClient
 from main import app  # Import FastAPI app
