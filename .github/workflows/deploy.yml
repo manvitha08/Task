@@ -71,12 +71,13 @@ jobs:
           script: |
             # Ensure Docker is installed on EC2
             docker --version
-            docker-compose --version
+            docker --version
+            docker compose version
             # Change to the project directory
             cd ~/trade-order-service
             # Stop any running containers
-            docker-compose down
+            docker compose down
             # Pull the latest Docker image
             docker pull manvitha0802/trade-order-service:latest
             # Restart containers
-            docker-compose up -d
+            docker compose up -d
