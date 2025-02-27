@@ -28,17 +28,17 @@ trade-order-service/
 
 ├── trade_order_service/        # Application package
 
-│   ├── main.py                 # FastAPI application code
+  │   ├── main.py                 # FastAPI application code
 
-│   └── db.py                   # Database setup (SQLite)
+  │   └── db.py                   # Database setup (SQLite)
 
 ├── tests/                      # Test cases
 
-│   ├── __init__.py             # Empty file
+  │   ├── __init__.py             # Empty file
 
-│   ├── test_orders.py          # API tests for orders
+  │   ├── test_orders.py          # API tests for orders
 
-│   └── test_websocket.py       # WebSocket tests
+  │   └── test_websocket.py       # WebSocket tests
 
 ├── requirements.txt            # Python dependencies
 
