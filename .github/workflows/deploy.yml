@@ -50,12 +50,18 @@ jobs:
           docker build -t manvitha0802/trade-order-service:latest .
           docker push manvitha0802/trade-order-service:latest
 
+      - name: Prepare SSH Key
+        run: |
+          echo "${{ secrets.EC2_SSH_KEY_B64 }}" | base64 -d > key.pem
+          chmod 600 key.pem
+        shell: bash
+
       - name: Deploy to EC2
         uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.EC2_HOST }}
           username: ${{ secrets.EC2_USER }}
-          key: ${{ secrets.EC2_SSH_KEY }}
+          key: key.pem
           script: |
             # Ensure Docker is installed on EC2
             docker --version
