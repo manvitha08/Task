@@ -27,6 +27,8 @@ Dockerfile provided for building the Docker image.
 **Deployment:**
 
   The application is deployed on an AWS EC2 instance using Docker and Docker Compose.
+  # API documentation
+ [ API documentation](http://127.0.0.1:8000/docs#/default/get_orders_orders_get)
 
 ## Project Structure
 ```bash
