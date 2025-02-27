@@ -23,9 +23,9 @@ Dockerfile provided for building the Docker image.
   The application is deployed on an AWS EC2 instance using Docker and Docker Compose.
 
 #Project Structure
+
 trade-order-service/
 ├── trade_order_service/        # Application package
-│   ├── __init__.py             # Empty file to mark as a package
 │   ├── main.py                 # FastAPI application code
 │   └── db.py                   # Database setup (SQLite)
 ├── tests/                      # Test cases
