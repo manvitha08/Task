@@ -40,3 +40,11 @@ trade-order-service/
     └── workflows/
         └── deploy.yml          # GitHub Actions workflow for CI/CD
 ```
+# Prerequisites
+Python 3.10+
+
+Docker (for containerization)
+
+An AWS EC2 instance (Ubuntu recommended) with Docker installed
+
+A GitHub repository with GitHub Actions enabled
