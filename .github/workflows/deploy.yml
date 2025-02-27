@@ -55,10 +55,11 @@ jobs:
           echo "${{ secrets.EC2_SSH_KEY_B64 }}" | base64 -d > trade-order-key.pem
           chmod 600 trade-order-key.pem
         shell: bash
+        
       - name: Debug SSH Key
         run: |
           ls -l trade-order-key.pem
-          head -n 1 trade-order-key.pem
+          head -n 5 trade-order-key.pem
         shell: bash
 
       - name: Deploy to EC2
