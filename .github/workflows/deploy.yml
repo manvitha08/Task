@@ -67,7 +67,7 @@ jobs:
         with:
           host: ${{ secrets.EC2_HOST }}
           username: ${{ secrets.EC2_USER }}
-          key: trade-order-key.pem
+          key_path: trade-order-key.pem
           script: |
             # Ensure Docker is installed on EC2
             docker --version
