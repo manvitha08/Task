@@ -52,13 +52,13 @@ jobs:
 
       - name: Prepare SSH Key
         run: |
-          echo "${{ secrets.EC2_SSH_KEY_B64 }}" | base64 -d > key.pem
-          chmod 600 key.pem
+          echo "${{ secrets.EC2_SSH_KEY_B64 }}" | base64 -d > trade-order-key.pem
+          chmod 600 trade-order-key.pem
         shell: bash
       - name: Debug SSH Key
         run: |
-          ls -l key.pem
-          head -n 1 key.pem
+          ls -l trade-order-key.pem
+          head -n 1 trade-order-key.pem
         shell: bash
 
       - name: Deploy to EC2
@@ -66,7 +66,7 @@ jobs:
         with:
           host: ${{ secrets.EC2_HOST }}
           username: ${{ secrets.EC2_USER }}
-          key: key.pem
+          key: trade-order-key.pem
           script: |
             # Ensure Docker is installed on EC2
             docker --version
