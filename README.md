@@ -22,33 +22,21 @@ Dockerfile provided for building the Docker image.
 **Deployment:**
   The application is deployed on an AWS EC2 instance using Docker and Docker Compose.
 
-#Project Structure
-
+# Project Structure
+```bash
 trade-order-service/
-
 ├── trade_order_service/        # Application package
-
-  │   ├── main.py                 # FastAPI application code
-
-  │   └── db.py                   # Database setup (SQLite)
-
+│   ├── __init__.py             # Empty file to mark as a package
+│   ├── main.py                 # FastAPI application code
+│   └── db.py                   # Database setup (SQLite)
 ├── tests/                      # Test cases
-
-  │   ├── __init__.py             # Empty file
-
-  │   ├── test_orders.py          # API tests for orders
-
-  │   └── test_websocket.py       # WebSocket tests
-
+│   ├── __init__.py             # Empty file
+│   ├── test_orders.py          # API tests for orders
+│   └── test_websocket.py       # WebSocket tests
 ├── requirements.txt            # Python dependencies
-
 ├── Dockerfile                  # Instructions to build the Docker image
-
 ├── docker-compose.yml          # (Optional) Local multi-container setup
-
 └── .github/
-
     └── workflows/
-    
         └── deploy.yml          # GitHub Actions workflow for CI/CD
-
+```
